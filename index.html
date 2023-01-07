@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hihihihi</title>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>❤ MusicApi</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200&family=Dongle:wght@300&family=Roboto+Mono&display=swap');
 
@@ -253,8 +254,9 @@
             const t = window.location.origin + "/" + links[i].firstElementChild.innerHTML
             links[i].firstElementChild.innerHTML = 'fetch("<span id=link-bold>' + t + '</span>")</br>&emsp;&emsp;.then(res => res.json())</br>&emsp;&emsp;.then(data => console.log(data))'
             
-            const copyBtn = document.createElement('img');
-            copyBtn.src = 'copy.png'
+            const copyBtn = document.createElement('box-icon');
+            copyBtn.setAttribute('name', 'copy')
+            copyBtn.setAttribute('color','#eac7c7')
             copyBtn.style = "width:25px; height:25px; position: absolute; top: 2px; right:2px; cursor:pointer";
             copyBtn.title = "Copy"
             
