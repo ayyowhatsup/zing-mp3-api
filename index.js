@@ -1,5 +1,6 @@
 const express = require('express')
 const { ZingMp3 } = require("zingmp3-api-full")
+const path = require('path');
 const app = express()
 const port = 3321
 
@@ -7,7 +8,7 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
-router.get('/', function (req, res) {
+app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
