@@ -7,6 +7,10 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
+router.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+
 app.get('/api/v1/song/get', (req, res) => {
     const id = req.query.id
     ZingMp3.getSong(id).then(data => res.send(data))
@@ -20,25 +24,25 @@ app.get('/api/v1/playlist/get', (req, res) => {
 app.get('/api/v1/home/get', (req, res) => {
     ZingMp3.getHome().then((data) => {
         res.send(data)
-      })
+    })
 })
 
 app.get('/api/v1/top100/get', (req, res) => {
     ZingMp3.getTop100().then((data) => {
         res.send(data)
-      })
+    })
 })
 
 app.get('/api/v1/chart/get', (req, res) => {
     ZingMp3.getChartHome().then((data) => {
         res.send(data)
-      })
+    })
 })
 
 app.get('/api/v1/new-release/get', (req, res) => {
     ZingMp3.getNewReleaseChart().then((data) => {
         res.send(data)
-      })
+    })
 })
 
 app.get('/api/v1/song-info/get', (req, res) => {
@@ -46,7 +50,7 @@ app.get('/api/v1/song-info/get', (req, res) => {
     ZingMp3.getInfoSong(id).then(data => res.send(data))
 })
 
-app.get('/api/v1/artist/get',  (req, res) => {
+app.get('/api/v1/artist/get', (req, res) => {
     const id = req.query.id
     ZingMp3.getArtist(id).then(data => res.send(data))
 })
@@ -56,7 +60,7 @@ app.get('/api/v1/lyric/get', (req, res) => {
     ZingMp3.getLyric(id).then(data => res.send(data))
 })
 
-app.get('/api/v1/search', (req, res)=>{
+app.get('/api/v1/search', (req, res) => {
     const keyword = req.query.keyword
     ZingMp3.search(keyword).then(data => res.send(data))
 })
@@ -65,5 +69,5 @@ app.get('/api/v1/mv/get', (req, res) => {
     const id = req.query.id
     ZingMp3.getVideo(id).then((data) => {
         res.send(data)
-      })
+    })
 })
