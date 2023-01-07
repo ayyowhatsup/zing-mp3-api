@@ -7,61 +7,61 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
-app.get('/song/get', (req, res) => {
+app.get('/api/v1/song/get', (req, res) => {
     const id = req.query.id
     ZingMp3.getSong(id).then(data => res.send(data))
 })
 
-app.get('/playlist/get', (req, res) => {
+app.get('/api/v1/playlist/get', (req, res) => {
     const id = req.query.id
     ZingMp3.getDetailPlaylist(id).then(data => res.send(data))
 })
 
-app.get('/home/get', (req, res) => {
+app.get('/api/v1/home/get', (req, res) => {
     ZingMp3.getHome().then((data) => {
         res.send(data)
       })
 })
 
-app.get('/top100/get', (req, res) => {
+app.get('/api/v1/top100/get', (req, res) => {
     ZingMp3.getTop100().then((data) => {
         res.send(data)
       })
 })
 
-app.get('/chart/get', (req, res) => {
+app.get('/api/v1/chart/get', (req, res) => {
     ZingMp3.getChartHome().then((data) => {
         res.send(data)
       })
 })
 
-app.get('/new-release/get', (req, res) => {
+app.get('/api/v1/new-release/get', (req, res) => {
     ZingMp3.getNewReleaseChart().then((data) => {
         res.send(data)
       })
 })
 
-app.get('/song-info/get', (req, res) => {
+app.get('/api/v1/song-info/get', (req, res) => {
     const id = req.query.id
     ZingMp3.getInfoSong(id).then(data => res.send(data))
 })
 
-app.get('/artist/get',  (req, res) => {
+app.get('/api/v1/artist/get',  (req, res) => {
     const id = req.query.id
     ZingMp3.getArtist(id).then(data => res.send(data))
 })
 
-app.get('/lyric/get', (req, res) => {
+app.get('/api/v1/lyric/get', (req, res) => {
     const id = req.query.id
     ZingMp3.getLyric(id).then(data => res.send(data))
 })
 
-app.get('/search', (req, res)=>{
+app.get('/api/v1/search', (req, res)=>{
     const keyword = req.query.keyword
     ZingMp3.search(keyword).then(data => res.send(data))
 })
 
-app.get('/mv/get', (req, res) => {
+app.get('/api/v1/mv/get', (req, res) => {
     const id = req.query.id
     ZingMp3.getVideo(id).then((data) => {
         res.send(data)
