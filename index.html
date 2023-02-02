@@ -160,30 +160,39 @@
                     <a href="#get-lyric">Get lyric</a>
                 </li>
                 <li>
-                    <a href="#search">Search</a>
+                    <a href="#search-all">Search All</a>
+                </li>
+                <li>
+                    <a href="#search-special">Search by Type</a>
                 </li>
                 <li>
                     <a href="#get-mv">Get MV</a>
+                </li>
+                <li>
+                    <a href="#get-recommend-keyword">Get Recommend Keyword</a>
+                </li>
+                <li>
+                    <a href="#get-suggested-keyword">Get Suggested Keyword</a>
                 </li>
             </ul>
         </div>
         <div class="main">
             <div class="header">
                 <a href="" style="color: white;text-decoration: none;">MusicApi</a>
-                <div>Build using <a style="color: #F7F5EB;text-decoration: none;" href="https://expressjs.com/" target="_blank">ExpressJS</a> and <a style="color: #F7F5EB;text-decoration: none;" href="https://www.npmjs.com/package/zingmp3-api-full" target="_blank">zingmp3-api-full</a> with Love</div>
+                <div>Build using <a style="color: #F7F5EB;text-decoration: none;" href="https://expressjs.com/" target="_blank">ExpressJS</a> and <a style="color: #F7F5EB;text-decoration: none;" href="https://www.npmjs.com/package/zingmp3-api-next" target="_blank">zingmp3-api-next</a> with Love</div>
             </div>
             <div class="notice"></div>
             <div class="main-container">
                 <div>
                     <h2 id="get-song">Get Song</h2>
                     <div class="link-container">
-                        <span id="link">api/v1/song/get?id=song_id</span>
+                        <span id="link">api/v1/song/get?id=${song_id}</span>
                     </div>
                 </div>
                 <div>
                     <h2 id="get-playlist">Get Playlist Detail</h2>
                     <div class="link-container">
-                        <span id="link">api/v1/playlist/get?id=playlist_id</span>
+                        <span id="link">api/v1/playlist/get?id=${playlist_id}</span>
                     </div>
                 </div>
                 <div>
@@ -213,31 +222,49 @@
                 <div>
                     <h2 id="get-song-info">Get Song Info</h2>
                     <div class="link-container">
-                        <span id="link">api/v1/song-info/get?id=song_id</span>
+                        <span id="link">api/v1/song-info/get?id=${song_id}</span>
                     </div>
                 </div>
                 <div>
                     <h2 id="get-artist">Get Artist</h2>
                     <div class="link-container">
-                        <span id="link">api/v1/artist/get?id=artist_id</span>
+                        <span id="link">api/v1/artist/get?id=${artist_id}</span>
                     </div>
                 </div>
                 <div>
                     <h2 id="#get-lyric">Get Lyric</h2>
                     <div class="link-container">
-                        <span id="link">api/v1/lyric/get?id=song_id</span>
+                        <span id="link">api/v1/lyric/get?id=${song_id}</span>
                     </div>
                 </div>
                 <div>
-                    <h2 id="search">Search</h2>
+                    <h2 id="search-all">Search All</h2>
                     <div class="link-container">
-                        <span id="link">api/v1/search?keyword=key_word</span>
+                        <span id="link">api/v1/search/multi?keyword=${key_word}</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 id="search-special">Search by Type: "song", "playlist", "artist", "video"</h2>
+                    <div class="link-container">
+                        <span id="link">api/v1/search?keyword=${key_word}&type=${type}&page=${page}&count=&{count}</span>
                     </div>
                 </div>
                 <div>
                     <h2 id="get-mv">Get MV</h2>
                     <div class="link-container">
-                        <span id="link">api/v1/mv/get?id=mv_id</span>
+                        <span id="link">api/v1/mv/get?id=${mv_id}</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 id="get-recommend-keyword">Get Recommend Keyword</h2>
+                    <div class="link-container">
+                        <span id="link">api/v1/recommend/get</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 id="get-suggested-keyword">Get Suggested Keyword</h2>
+                    <div class="link-container">
+                        <span id="link">api/v1/suggested/get?keyword=${key-word}</span>
                     </div>
                 </div>
 
