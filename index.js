@@ -113,7 +113,13 @@ app.get('/api/v1/suggested/get', (req, res) => {
         res.send(data)
     })
 })
-
+//Suggested playlist
+app.get('/api/v1/playlist/suggested/get', (req, res) => {
+    const id = req.query.id
+    zing.get_suggested_playlists(id).then((data) => {
+        res.send(data)
+    })
+})
 // zing.get_week_chart("IWZ9Z08I") 
 /*
 id: string (required)
@@ -143,9 +149,6 @@ sort: string (optional)(default: "listen")
  */
 
 // zing.get_category_mv("IWZ97FCE")  https://zingmp3.vn/the-loai-video/EDM-Viet/IWZ97FCE.html
-/** id: string (required) */
-
-// zing.get_suggested_playlists("ZODAB8EF") https://zingmp3.vn/album/Today-s-EDM-Hits-The-Chainsmokers-Alan-Walker-Alesso-Topic/ZODAB8EF.html
 /** id: string (required) */
 
 // zing.get_events()
