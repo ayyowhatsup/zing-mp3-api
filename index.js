@@ -120,6 +120,20 @@ app.get('/api/v1/playlist/suggested/get', (req, res) => {
         res.send(data)
     })
 })
+//Home hub
+app.get('/api/v1/hub/get', (req, res) => {
+    zing.get_hub_home().then((data) => {
+        res.send(data)
+    })
+})
+
+//Get specific hub 
+app.get('/api/v1/hub/specific/get', (req, res) => {
+    const id = req.query.id
+    zing.get_hub_detail(id).then((data) => {
+        res.send(data)
+    })
+})
 // zing.get_week_chart("IWZ9Z08I") 
 /*
 id: string (required)
@@ -135,7 +149,7 @@ year: number (optional)(default: 0)
     page: number (optional)(default: 1)
 */
 
-// zing.get_hub_home()
+// 
 
 // zing.get_hub_detail("IWZ9Z09A") https://zingmp3.vn/hub/Khuc-Nhac-Vui/IWZ9Z09A.html 
 /** id: string */
